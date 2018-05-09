@@ -1,17 +1,12 @@
-期刊和会议论文的citation counting的分布情况 -- TheDistributionOfJournalAndConrference.py
+There are seven Python (Version:2.7.11) source code files and two data files in this project. Some libraries are necessary for this project, such as the 'matplotlib', 'numpy', etc. Besides, you should unzip the 'data.rar' and the 'verify.rar' to the root directory of this project. 
 
-不同类别的期刊和会议的比较 + 同一类别的期刊和会议之间的差异比较 -- DifferenceBetweenJournlsAndConferences.py
+The 'TheDistributionOfJournalAndConrference.py' is used to analyse the distribution characteristic of the citation counting of journals and conferences. 
 
-计算不同年份的期刊会议的引用权重分配情况 --  weightOfDifferentYear.py
+The 'DifferenceBetweenJournlsAndConferences.py' is used for analysis the difference between various categories of journals and conferences. It can also analysis the distinguishes between journals and conference which are in the same category.
 
-使用本文提出的方法对期刊会议进行分类的结果 -- verify.py
-  -- 这个文件中包含两个主要的函数，verifyJour 和 verifyConf。 这两个函数都是需要先将不同期刊会议在不同年份的引用次数给分别出来，然后再用这些数据来计算对应期刊会议的weighting citation counting。我们在源代码中将不同年份奇卡会议分别出来的函数给注释掉，因为我们已经获取了这些数据，可以直接使用。但是在没有这些数据的时候，就需要使用这些函数来计算这些数据。
+The 'weightOfDifferentYear.py' is used to calculate the citation counting weights of differenct publicatons in different years.
 
-计算期刊会议的weighting citation counting。使用本文的方法对CCF推荐的期刊会议进行排名，并提取前十个前会议 -- topTen
+The 'verify.py' is used to calculate the weighting citation counting of these journals and conferences. With the weghting citation counting, we can classify the journals and conferences with the scheme we proposed in this paper and compare the result with CCF's recommendation list of AI field.
 
-使用三种不同的方法处理确实的数据集 -- 
-   - Method1.py:使用随机概率的方法；
-   - Method2.py:使用投票规则的方法；
-   - Method3.py：之间删除确实的数据集；
-
+The 'Method1.py', 'Method2.py' and 'Method3.py are three method we used in this paper to deal with the missing data.
    
