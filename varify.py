@@ -302,12 +302,12 @@ def varify():
         print np.mean(arr)
 
 def verifyJour():
-#     for fn in fnJA:
-#         test(fn, wJA, 'journalA', 'JA')
-#     for fn in fnJB:
-#         test(fn, wJB, 'journalB', 'JB')
-#     for fn in fnJC:
-#         test(fn, wJC, 'journalC', 'JC')
+    for fn in fnJA:
+        test(fn, wJA, 'journalA', 'JA')
+    for fn in fnJB:
+        test(fn, wJB, 'journalB', 'JB')
+    for fn in fnJC:
+        test(fn, wJC, 'journalC', 'JC')
         
     for fn in fnJA:
         getNewCitationJA(fn)
@@ -317,14 +317,14 @@ def verifyJour():
         getNewCitationJC(fn)
 
 def verifyConf():
-#     for fn in fnCA:
-#         test(fn, wCA, 'conferenceA', 'CA')
-#     for fn in fnCB:
-#         test(fn, wCB, 'conferenceB', 'CB')
-#     for fn in fnCC:
-#         test(fn, wCC, 'conferenceC', 'CC')
-#     for fn in fnCA:
-#         test(fn, wCA, 'conferenceA', 'CA')
+    for fn in fnCA:
+        test(fn, wCA, 'conferenceA', 'CA')
+    for fn in fnCB:
+        test(fn, wCB, 'conferenceB', 'CB')
+    for fn in fnCC:
+        test(fn, wCC, 'conferenceC', 'CC')
+    for fn in fnCA:
+        test(fn, wCA, 'conferenceA', 'CA')
         
     for fn in fnCA:
         getNewCitationCA(fn)
@@ -335,5 +335,5 @@ def verifyConf():
 
 if __name__ == '__main__':
     verifyConf()
-#     verifyJour()
+    verifyJour()
 
