@@ -17,6 +17,9 @@ def writeFile(filename,Txtstr):
     fr.close()
 
 def readFile(fileneme):
+    '''
+    get the citaion counting of each papers and saved them in a list.
+    '''
     word = []
     file=open(fileneme)
     while 1:
