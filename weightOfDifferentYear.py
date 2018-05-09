@@ -1,25 +1,20 @@
 #coding=utf-8
 from __future__ import division 
 import numpy as np
-import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit  
-from sympy import *
-from fileinput import filename
+import py_compile
 
+# py_compile.compile('DifferenceBetweenJournlsAndConferences.py')
 maxCC = 2000
 diss = 1
 Lenlist = 2000
-
-
+ 
+ 
 def writeFile(filename,Txtstr):
     fr = open(filename,'a+')
     fr.write(Txtstr)
     fr.close()
-
+ 
 def readFile(fileneme):
-    '''
-    get the citaion counting of each papers and saved them in a list.
-    '''
     word = []
     file=open(fileneme)
     while 1:
@@ -31,20 +26,6 @@ def readFile(fileneme):
         except:
             pass
     return word
-
-def readFile16(filename, weight):
-    filename = r'data/counts/conferenceA/'+filename + '/2016.txt'
-    file=open(filename)
-    while 1:
-        line = file.readline().replace('\n','')
-        if not line:
-            break
-        try:
-            outFilename = r'varify/' + filename + '.txt'
-            writeFile(outFilename, (line.split('\t')[1])*weight[9])
-        except:
-            print line
-    print filename,'2016','done...'
 
 def calculateMean_07(filename):
     meanLog = np.mean( [np.log( (int(n)+1) )/10 for n in readFile(filename)] )
@@ -79,7 +60,7 @@ def calculateMean_16(filename):
 def calculateMean(filename):
     meanLog = np.mean( [ (int(n)) for n in readFile(filename)] )
     return meanLog
-        
+         
 def getRepeatCount(mylist, maxCC, diss,lenY=1):
     myset = set(mylist)  
     indexNum = []
@@ -100,7 +81,7 @@ def getRepeatCount(mylist, maxCC, diss,lenY=1):
             print '..'
     listY = [y/lenY for y in listY ]
     return listX, listY 
-
+ 
 def calculateWeights(name):
     orignalMatrix = []
     filename_16 = 'data/2016/'+name+'.txt'
@@ -124,7 +105,7 @@ def calculateWeights(name):
     orignalMatrix.append( calculateMean_15(filename_15) )
     orignalMatrix.append( calculateMean_16(filename_16) )
     return orignalMatrix
-
+ 
 if __name__ == '__main__':
     CA = [t/7 for t in calculateWeights('CA')]
     CB = [t/12 for t in calculateWeights('CB')]
